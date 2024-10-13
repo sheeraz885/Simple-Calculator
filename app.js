@@ -3,8 +3,12 @@ let screen = document.getElementsByClassName("display")[0];
 function getvalue(value){
     switch(value){
         case "=" : 
-         let result = eval(screen.innerText);
-         screen.innerText = result;
+        if(!screen.innerText){
+            screen.innerText = "";
+        }
+         else{
+            let result = eval(screen.innerText);
+         screen.innerText = result;}
          break;
 
          case "AC" : 
